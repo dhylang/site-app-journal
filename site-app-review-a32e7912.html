@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafafa;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e1e1e;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1.25rem;
+      min-height: 100vh;
+    }
+
+    .page-wrap {
+      max-width: 680px;
+      width: 100%;
+      margin: 2.5rem 0 3rem;
+    }
+
+    /* 首页横幅 —— 杂志头题 */
+    .hero {
+      margin-bottom: 4rem;
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: 2.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 550;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      color: #000;
+    }
+
+    .hero .subhead {
+      font-size: 1rem;
+      color: #5e5e5e;
+      border-left: 3px solid #c8c8c8;
+      padding-left: 1rem;
+      margin-top: 0.3rem;
+    }
+
+    .hero .subhead em {
+      font-style: normal;
+      background: #f0f0f0;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+    }
+
+    /* 背景说明 —— 杂志 pullquote 风格 */
+    .background-note {
+      background: #f4f4f4;
+      padding: 1.6rem 2rem;
+      border-radius: 0;
+      margin-bottom: 3rem;
+      position: relative;
+      font-size: 1rem;
+      color: #2a2a2a;
+      border-left: 4px solid #0a0a0a;
+    }
+
+    .background-note::before {
+      content: "☰ 背景";
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #7a7a7a;
+      margin-bottom: 0.5rem;
+    }
+
+    .background-note p {
+      margin-top: 0.2rem;
+    }
+
+    /* 三段介绍 —— 卡片干净 */
+    .intro-block {
+      margin-bottom: 3rem;
+    }
+
+    .intro-item {
+      margin-bottom: 2.8rem;
+    }
+
+    .intro-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-item h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.3px;
+      color: #111;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.2rem;
+      display: inline-block;
+    }
+
+    .intro-item p {
+      margin-top: 0.55rem;
+      font-size: 0.975rem;
+    }
+
+    .intro-item .meta-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      background: #eaeaea;
+      padding: 0.15rem 0.6rem;
+      border-radius: 12px;
+      color: #424242;
+      margin-right: 0.3rem;
+    }
+
+    /* 紧凑FAQ摘要 */
+    .faq-snip {
+      background: #ffffff;
+      border: 1px solid #e2e2e2;
+      padding: 1.8rem 1.8rem 1.4rem 1.8rem;
+      margin: 3rem 0 2.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.01);
+    }
+
+    .faq-snip h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+      color: #2b2b2b;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 0.5rem;
+    }
+
+    .faq-snip dt {
+      font-weight: 500;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #1a1a1a;
+    }
+
+    .faq-snip dd {
+      margin-left: 0;
+      margin-top: 0.2rem;
+      font-size: 0.9rem;
+      color: #4b4b4b;
+      border-left: 2px solid #d4d4d4;
+      padding-left: 0.9rem;
+    }
+
+    .faq-snip dd a {
+      color: #1e1e1e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b0b0b0;
+    }
+
+    .faq-snip dd a:hover {
+      color: #000;
+      text-decoration-color: #000;
+    }
+
+    /* 页尾访问提示 */
+    .footer-note {
+      margin-top: 3.5rem;
+      padding: 2rem 0 0.5rem 0;
+      border-top: 1px solid #ddd;
+      font-size: 0.95rem;
+      color: #3b3b3b;
+    }
+
+    .footer-note p {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-note a {
+      color: #1f1f1f;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #c0c0c0;
+      font-weight: 450;
+    }
+
+    .footer-note a:hover {
+      color: #000000;
+      text-decoration-color: #000;
+    }
+
+    .footer-note .muted {
+      color: #7b7b7b;
+      font-size: 0.85rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .page-wrap {
+        margin: 1.8rem 0 2.5rem;
+      }
+      .background-note {
+        padding: 1.2rem 1.2rem;
+      }
+      .faq-snip {
+        padding: 1.2rem;
+      }
+      .intro-item h2 {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- 首页横幅 -->
+    <div class="hero">
+      <h1>爱游戏<br>简明指南</h1>
+      <div class="subhead">从初次查找到顺畅浏览 · 一篇整理过的说明</div>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="background-note">
+      <p>提到「爱游戏」，很多朋友会想到一个汇集了游戏资讯、讨论与资源索引的地方。这个网站经过多次结构调整，页面分类比较清晰，但在实际访问时仍有一些细节可以帮助你更快找到内容。下面从三个角度梳理一下基本用法和常见问题。</p>
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="intro-block">
+      <div class="intro-item">
+        <h2>❶ 内容分布与导航</h2>
+        <p><span class="meta-tag">栏目</span> 网站主页顶部设有分类菜单，涵盖热门游戏、独立作品、经典回顾以及社区讨论。每个板块都有对应的标签筛选，不需要频繁翻页。如果你想快速浏览新发布的文章，可以直接从「最新」模块进入。</p>
+      </div>
+
+      <div class="intro-item">
+        <h2>❷ 信息密度与阅读节奏</h2>
+        <p><span class="meta-tag">排版</span> 多数文章采用窄栏布局，配图居中，评论区域折叠在底部。你可以使用浏览器的阅读模式进一步简化页面，获得更纯粹的文本体验。对于评测类内容，作者通常会分段标注「主观感受」与「客观参数」，方便区分。</p>
+      </div>
+
+      <div class="intro-item">
+        <h2>❸ 访问方式与注意</h2>
+        <p><span class="meta-tag">提醒</span> 由于网站未提供官方移动应用，建议直接通过浏览器访问并添加至主屏幕（iOS/Android 均支持）。部分页面可能引用外部视频或图片，加载速度受网络环境影响，耐心等待几秒即可。如果你遇到显示异常，可以尝试切换网络或刷新页面。</p>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要（杂志常用的小贴士） -->
+    <div class="faq-snip">
+      <h3>▎常见疑问摘要</h3>
+      <dl>
+        <dt>是否需要注册才能浏览全部内容？</dt>
+        <dd>大部分文章和论坛板块对访客开放，只有部分互动功能（如发帖、收藏）需要登录。注册流程只需邮箱验证，无额外步骤。</dd>
+
+        <dt>站内的资源下载如何操作？</dt>
+        <dd>资源类文章通常会提供网盘或直接链接，下载前留意文件大小和格式说明。建议使用正规下载工具，避免多线程工具触发反爬限制。</dd>
+
+        <dt>如何获得最新内容的提醒？</dt>
+        <dd>网站没有主动推送通知，你可以关注其 RSS 订阅地址（主页底部可找到）。另外，部分游戏专区会有独立更新日志。</dd>
+
+        <dt>想进一步了解站内信息？</dt>
+        <dd>如果你正在寻找相关资讯，可以直接前往 <a href="https://site-app-i-game.com.cn">爱游戏</a> 浏览。页面内容以中文为主，适合日常查阅。</dd>
+      </dl>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+      <p>以上是根据当前站点状况整理的一份简短说明。游戏资讯类网站时常调整布局，但核心的资讯与社区功能一直保持稳定。</p>
+      <p>如果你觉得这份指南有帮助，不妨收藏 <a href="https://site-app-i-game.com.cn">爱游戏</a> 以便日后快速访问。使用时注意甄别第三方转载内容，以站内原文为准。</p>
+      <p class="muted">— 整理于 2025 · 仅作参考，实际以官网为准。</p>
+    </div>
+
+  </div>
+</body>
+</html>
